@@ -1,0 +1,194 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto Slab", serif;
+  font-size: calc(16px + 0.1041666667vw);
+  font-weight: 500;
+  font-style: normal;
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "header" "main";
+}
+body.black {
+  background-color: #36383f;
+}
+body.black header {
+  background-color: #36383f;
+  -webkit-box-shadow: 0;
+          box-shadow: 0;
+  border: 1px solid #7093db;
+}
+body.black main {
+  background-color: #36383f;
+  border: 1px solid #8270db;
+}
+body.black footer {
+  background-color: #36383f;
+  border: 1px solid #7093db;
+}
+
+header {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  background-color: #7093db;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  -webkit-box-shadow: 0 0 8px 0 #85888c;
+          box-shadow: 0 0 8px 0 #85888c;
+  grid-area: header;
+}
+header .header__menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+header .header__menu ul {
+  text-align: center;
+  margin: 15px;
+}
+header .header__menu ul li {
+  list-style: none;
+}
+header .header__menu ul li a {
+  text-decoration: none;
+  color: #f9f9f9;
+}
+header .header__menu ul li a:hover {
+  color: #70dbb8;
+}
+header .header__menu button {
+  width: 50px;
+  height: 5px;
+  padding: 10px;
+  border-radius: 20px;
+  position: relative;
+  border: none;
+  outline: none;
+  background-color: #f9f9f9;
+  -webkit-transition: background-color 0.5s;
+  transition: background-color 0.5s;
+}
+header .header__menu button:focus {
+  outline: none;
+}
+header .header__menu button span {
+  top: 2px;
+  -webkit-transform: translateX(-150%);
+          transform: translateX(-150%);
+  position: absolute;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  background-color: #36383f;
+  -webkit-transition: background-color 0.5s, -webkit-transform 0.5s;
+  transition: background-color 0.5s, -webkit-transform 0.5s;
+  transition: background-color 0.5s, transform 0.5s;
+  transition: background-color 0.5s, transform 0.5s, -webkit-transform 0.5s;
+}
+header .header__menu button.active {
+  background-color: #36383f;
+}
+header .header__menu button.active span {
+  background-color: #f9f9f9;
+  -webkit-transform: translateX(50%);
+          transform: translateX(50%);
+}
+
+main {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  margin: 5% 10% 10% 10%;
+  grid-area: main;
+  background-color: #8270db;
+  border-radius: 40px;
+  padding: 5%;
+  color: #f9f9f9;
+  -webkit-box-shadow: 0 0 8px 0 #85888c;
+          box-shadow: 0 0 8px 0 #85888c;
+}
+main h1, main h2 {
+  padding-bottom: 15px;
+}
+footer {
+  position: fixed;
+  background-color: #7093db;
+  bottom: 30px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  padding: 30px;
+  border-radius: 40px;
+  width: 80%;
+  -webkit-box-shadow: 0 -5px 15px 0 #85888c;
+          box-shadow: 0 -5px 15px 0 #85888c;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  opacity: 1;
+  -webkit-transition: opacity 0.5s, -webkit-transform 0.5s;
+  transition: opacity 0.5s, -webkit-transform 0.5s;
+  transition: opacity 0.5s, transform 0.5s;
+  transition: opacity 0.5s, transform 0.5s, -webkit-transform 0.5s;
+}
+footer.scrolled {
+  opacity: 0;
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+  pointer-events: none;
+}
+footer .footer__menu ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+footer .footer__menu ul {
+  text-align: center;
+  margin: 15px;
+}
+footer .footer__menu ul li {
+  list-style: none;
+}
+footer .footer__menu ul li a {
+  text-decoration: none;
+  color: #f9f9f9;
+}
+footer .footer__menu ul li a:hover {
+  color: #70dbb8;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 1rem;
+  }
+  header .header__menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  footer {
+    padding: 0;
+  }
+  footer .footer__menu ul {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}

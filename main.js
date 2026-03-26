@@ -1,3 +1,5 @@
+/// Отображение футера и скрытие при начальной и конечной точки прокрутки
+
 const footerElement = document.querySelector("footer");
 let last_scroll = 0;
 let isScrolling = false;
@@ -21,4 +23,28 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     last_scroll = currentScroll;
   });
+});
+
+///Кнопка темы
+
+const themeBtn = document.querySelector(".theme-btn");
+const body = document.querySelector("body");
+
+function updateTheme(isDark) {
+  if (isDark) {
+    themeBtn.classList.add("active");
+    body.classList.add("black");
+  } else {
+    themeBtn.classList.remove("active");
+    body.classList.remove("black");
+  }
+}
+
+const savedTheme = localStorage.getItem("theme");
+updateTheme(savedTheme === "dark");
+
+themeBtn.addEventListener("click", function () {
+  const isDark = !body.classList.contains("black");
+  updateTheme(isDark);
+  localStorage.setItem("theme", isDark ? "dark" : "light");
 });

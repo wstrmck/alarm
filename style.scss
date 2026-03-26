@@ -29,6 +29,7 @@ body {
       background-color: $black;
       box-shadow: 0;
       border: 1px solid $blue;
+      border-top: 0;
     }
     main {
       background-color: $black;
@@ -78,6 +79,7 @@ header {
       outline: none;
       background-color: $white;
       transition: background-color 0.5s;
+      cursor: pointer;
       &:focus {
         outline: none;
       }
@@ -94,7 +96,7 @@ header {
           transform 0.5s;
       }
       &.active {
-        background-color: $black;
+        background-color: $blue-black;
         span {
           background-color: $white;
           transform: translateX(50%);
@@ -130,7 +132,7 @@ footer {
   padding: 30px;
   border-radius: 40px;
   width: 80%;
-  box-shadow: 0 -5px 15px 0 $gray;
+  box-shadow: 0 -2px 15px 0 $gray;
   transform: translateY(0);
   opacity: 1;
   transition:
